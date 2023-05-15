@@ -1,24 +1,60 @@
-import logo from './logo.svg';
-import './App.css';
+// import  Header from "./components/Header"
+// import Embed from "./components/Embed"
+// import Event from "./components/Event"
+// import Props from "./components/Props"
+// import State from "./components/State"
+
+import { useState } from "react"
+
+// function Content(){
+//   return (
+//     <>
+//       <h1>This is a Content</h1>
+//       <button>Click Here</button>
+//     </>
+//   )
+// }
+
+function PrivatePage(props) {
+  return (
+    <>
+      <h1>Welcome</h1>
+      <button onClick={props.logout}>Logout</button>
+    </>
+  )
+}
+
+function LoginPage(props) {
+  return (
+    <>
+      <h1>Please Signin</h1>
+      <button onClick={props.login}>login</button>
+    </>
+  )
+}
+
 
 function App() {
+  const [isLoggedin, setIsLoggedin] = useState(true) // false
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {/* <Content />
+      <Header /> */}
+      {/* <Embed /> */}
+      {/* <Event /> */}
+
+      {/* <h1>Contoh Penerapan Props</h1> */}
+      {/* <Props data="BMW" price="9M" series={series}/>
+      <Props data="RUBICON" price="15M" series={series}/>
+      <Props data="MERCEDES" price="3M" series={series}/> */}
+
+      {/* <State /> */}
+
+      {
+        isLoggedin ? (<PrivatePage logout={() => setIsLoggedin(!isLoggedin)} />) : (<LoginPage login={() => setIsLoggedin(!isLoggedin)} />)
+      }
+    </>    
   );
 }
 
