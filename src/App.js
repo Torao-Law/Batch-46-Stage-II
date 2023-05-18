@@ -1,23 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+// import FormTemplate from "./components/Form";
+// import ExampleForm from "./components/Form1";
+// import LifeCycle from "./components/LifeCycleClass";
+import LifeCycleFunctional from "./components/LifeCycleFunctional";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {/* <LifeCycle /> */}
+      <LifeCycleFunctional />
     </div>
   );
 }
